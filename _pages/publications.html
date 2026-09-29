@@ -1,0 +1,22 @@
+---
+layout: archive
+title: "Publications"
+permalink: /publications/
+published: false
+author_profile: true
+---
+
+<p class="page-lead">Selected publications on visuotactile sensing, tactile simulation, robot manipulation, and tactile foundation models. The author name is highlighted; paper and external links are provided where available.</p>
+
+{% assign year_groups = site.publications | group_by: "year" | sort: "name" | reverse %}
+{% for group in year_groups %}
+  <section class="publication-year">
+    <h2>{{ group.name }}</h2>
+    {% assign papers = group.items | sort: "date" | reverse %}
+    <div class="publication-list">
+      {% for post in papers %}
+        {% include publication-item.html post=post %}
+      {% endfor %}
+    </div>
+  </section>
+{% endfor %}

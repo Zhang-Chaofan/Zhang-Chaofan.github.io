@@ -1,0 +1,13 @@
+{% assign post = include.post %}
+<article class="publication-item">
+  <h3><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h3>
+  <p class="publication-item__authors">{{ post.authors }}</p>
+  <p class="publication-item__venue"><em>{{ post.venue }}</em>{% if post.note %} · {{ post.note }}{% endif %}</p>
+  <div class="publication-item__links">
+    {% if post.paperurl %}<a href="{{ post.paperurl }}">PDF</a>{% endif %}
+    {% if post.doi %}<a href="{{ post.doi }}">DOI</a>{% endif %}
+    {% if post.arxiv %}<a href="{{ post.arxiv }}">arXiv</a>{% endif %}
+    {% if post.projecturl %}<a href="{{ post.projecturl }}">Project</a>{% endif %}
+  </div>
+</article>
+
